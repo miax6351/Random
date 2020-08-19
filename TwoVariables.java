@@ -9,9 +9,7 @@ public class TwoVariables {
 
 		for (int i = 0; i < myArray.length; i++) {
 
-			int Random = (int) (Math.random() * 100);
-
-			myArray[i] = Random;
+			myArray[i] = (int) (Math.random() * 100);
 
 		}
 
