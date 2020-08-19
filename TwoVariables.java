@@ -1,9 +1,11 @@
 
 public class TwoVariables {
 
-	static int[] myArray = new int[100];
+	static int[] myArray = new int[10];
 
 	public static void main(String[] args) {
+
+		TwoVariables tv = new TwoVariables();
 
 		for (int i = 0; i < myArray.length; i++) {
 
@@ -13,27 +15,35 @@ public class TwoVariables {
 
 		}
 
+		myArray = tv.myFunction(myArray);
+
+		for (int j = 0; j < myArray.length; j++) {
+			System.out.println(myArray[j]);
+		}
+
+	}
+
+	public int[] myFunction(int[] paraArray) {
+
 		int temp;
-		for (int k = 1; k < myArray.length; k++) {
+		for (int k = 1; k < paraArray.length; k++) {
 
-			for (int i = k; i < myArray.length; i++) {
+			for (int i = k; i < paraArray.length; i++) {
 
-				if (myArray[i] > myArray[k - 1]) {
+				if (paraArray[i] > paraArray[k - 1]) {
 
-					temp = myArray[k - 1];
+					temp = paraArray[k - 1];
 
-					myArray[k - 1] = myArray[i];
+					paraArray[k - 1] = paraArray[i];
 
-					myArray[i] = temp;
+					paraArray[i] = temp;
 
 				}
 			}
 
 		}
 
-		for (int j = 0; j < myArray.length; j++) {
-			System.out.println(myArray[j]);
-		}
+		return paraArray;
 
 	}
 
